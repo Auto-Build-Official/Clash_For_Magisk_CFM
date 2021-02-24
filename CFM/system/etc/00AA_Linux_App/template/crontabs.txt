@@ -1,0 +1,7 @@
+
+0 23 * * 2,4,6 clash_control upgeoip && clash_control restart
+
+0 */12 * * * clash_control upsub && clash_control restart
+
+01 * * * * run-parts /system/etc/00AA_Linux_App/script/cron.hourly
+

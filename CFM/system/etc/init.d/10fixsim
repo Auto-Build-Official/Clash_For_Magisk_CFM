@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+setprop gsm.sim.operator.alpha "AT&T";
+setprop gsm.sim.operator.iso-country "us";
+setprop gsm.sim.operator.numeric "310090";

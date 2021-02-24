@@ -1,0 +1,15 @@
+#!/system/bin/sh
+
+#每小时清理日志防止日志占用空间
+
+#测试
+echo "$(date "+%Y-%m-%d %H:%M:%S") : 通过run-parts运行了Log_Clear.sh" > /data/00AA_Linux_App/LOG/log_clear.log
+
+#定时器日志
+rm -rf /data/00AA_Linux_App/LOG/crond_status.log
+#示例定时任务日志
+#rm -rf /data/00AA_Linux_App/LOG/template_crontabs.log
+#Clash日志
+rm -rf /data/00AA_Linux_App/LOG/clash_run_status.log
+rm -rf /data/00AA_Linux_App/LOG/clash_service.log
+

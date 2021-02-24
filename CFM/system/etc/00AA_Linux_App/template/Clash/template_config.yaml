@@ -1,0 +1,46 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: true # false
+mode: rule # global / direct
+log-level: silent # info / warning / error / debug
+external-controller: 127.0.0.1:9090
+external-ui:
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:1053
+  default-nameserver:
+    - 119.29.29.29
+    - 119.28.28.28
+    - 223.5.5.5
+    - 1.1.1.1
+  enhanced-mode: redir-host # fake-ip
+  fake-ip-filter:
+  nameserver:
+    # - tls://dns.pub
+    # - tls://doh.pub
+    # - tls://223.5.5.5
+    # - tls://185.222.222.222
+    - https://doh.pub/dns-query
+    - https://dns.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://rubyfish.cn/dns-query
+  fallback:
+    # - tls://1.1.1.1
+    # - tls://8.8.8.8
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - https://doh.dns.sb/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+tun:
+  enable: true
+  #system or gvisor
+  stack: system
+  # dns-hijack:
+  #   - 8.8.8.8:53
+  #   - tcp://8.8.8.8:53
+
